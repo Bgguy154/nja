@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "School API",
+    "_postman_id": "11111-22222-school-api",
+    "description": "Collection for Add School and List Schools",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"St. Xavier's High School\",\n  \"address\": \"12 Church Street, Mumbai\",\n  \"latitude\": 18.9404,\n  \"longitude\": 72.8350\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
+      "name": "List Schools (example)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/listSchools?lat=19.0760&lng=72.8777",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["listSchools"],
+          "query": [
+            { "key": "lat", "value": "19.0760" },
+            { "key": "lng", "value": "72.8777" }
+          ]
+        }
+      }
+    }
+  ]
+}
